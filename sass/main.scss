@@ -1,0 +1,176 @@
+@charset "UTF-8";
+
+// 1. Utilidades
+@import
+  './utilidades/normalize.scss',
+  './utilidades/skeleton.scss';
+
+
+
+// Estilos principales
+* {
+  box-sizing: border-box;
+}
+
+
+
+h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+
+
+.contenedor-grid {
+  width: 100%;
+  height: 97vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .grid {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(10rem, 1fr));
+    grid-auto-rows: 5rem;
+    box-shadow: 0 0 20px 10px #eaeaeaea;
+    &__item {
+      background: hsl(5, 100, 60%);
+      &:nth-child(even) {
+        background: hsl(5, 100, 80%);
+      }
+    }
+    .item3 {
+      grid-column-start: 1;
+    }
+  }
+}
+
+
+
+.contenedor-form {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.proyectos {
+  width: 100%;
+  padding: 4rem 15vw;
+  background-color: black;
+  &__separador {
+    width: 100%;
+    height: 50vh;
+    display: grid;
+    margin-bottom: 8rem;
+    gap: 2rem;
+    grid-template-columns: repeat(3,1fr) 0.5fr;
+    align-items: center;
+    // background-color: indigo;
+    &:nth-child(even) {
+      grid-template-columns: 0.5fr repeat(3,1fr) ;
+      // background-color: lawngreen;
+      .tarjeta__espacio{
+        grid-column-start: 1;
+        grid-row-start: 1;
+        justify-content: start;
+        // background-color: rosybrown;
+      }
+    }
+  }
+}
+
+.tarjeta {
+  width: 100%;
+  min-height: 100%;
+  border: 5px solid white;
+  background-color: yellow;
+  flex-wrap: wrap;
+  &:nth-child(even) {
+    background-color: crimson;
+  }
+}
+
+.tarjeta__espacio {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  font-size: 7vh;
+  // background-color: red;
+  color: #eaeaeaea;
+}
+
+
+
+.contenedor-tarjetas {
+  padding: 10vh 8vw;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  background-color: #eaeaea;
+}
+
+.tarjeta-base {
+  // width: 100%;
+  // height: 20vw;
+  background-color: #fff;
+  &:nth-child(even) {
+    background-color: #222;
+  }
+}
+
+.tarjeta--01 {
+  width: 100%;
+  height: 20vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  // box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+  background-color: #fff;
+  &__img {
+    min-height: 100%;
+    background-image: url(https://images.unsplash.com/photo-1617471346061-5d329ab9c574?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE0fGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 0.5s;
+  }
+  &__contenedor-desc {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__desc {
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    font-size: 1.2rem;
+  }
+  &__boton {
+    margin: 0;
+    font-size: 1rem;
+    margin-left: 1rem;
+    align-self: flex-end;
+  }
+  &:hover {
+    top: -8px;
+    // box-shadow: 0 4px 5px rgba(255, 255, 255, 0.3);
+    .tarjeta--01__img {
+      min-height: 80%;
+      background-color: burlywood;
+    }
+  }
+}
+
+.tarjeta--02 {
+  width: 100%;
+  height: 25vw;
+}
